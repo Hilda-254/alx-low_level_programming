@@ -3,7 +3,7 @@
  * main - main block
  * Description: print the alphabet in lowercase
  * and in the uppercase, follow by a newline
- * Return: 0
+ * Return: o
  */
 int main(void)
 {
@@ -23,4 +23,7 @@ int main(void)
 		putchar(c);
 		c++;
 	}
+
+	putchar('\n');
+	return (0);
 }
