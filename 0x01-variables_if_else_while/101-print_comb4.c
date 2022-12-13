@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 /**
  * main - main block
  * Description: Write a program that prints all possible
@@ -17,42 +16,36 @@
  */
 int main(void)
 {
-	int c;
-	int d;
-	int e = 0;
+	int ones = '0';
+	int tens = '0';
+	int hundreds = '0';
 
-	while (e < 10)
+	for (hundreds = '0'; hundreds <= '9'; hundreds++)
 	{
-		d = 0;
-		while (d < 10)
+		for (tens = '0'; tens <= '9'; tens++)
 		{
-			c = 0;
-			while (c < 10)
+			for (ones = '0'; ones <= '9'; ones++)
 			{
-				if (c != d && d != e && e < d && d < c)
+				if (!((ones == tens) || (tens == hundreds) ||
+							(tens > ones) || (hundreds > tens)))
 				{
-					putchar('0' + e);
-					putchar('0' + d);
-					putchar('0' + c);
+					putchar(hundreds);
+					putchar(tens);
+					putchar(ones);
+					if (!(ones == '9' && hundreds == '7' && tens == '8'))
 
-					if (c + d + e != 9 + 8 + 7)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 
-					c++;
-
 				}
-				d++;
 
 			}
-			e++;
 
 		}
-		putchar('\n');
-		return (0);
+
 	}
+	putchar('\n');
+	return (0);
 }
-
-
