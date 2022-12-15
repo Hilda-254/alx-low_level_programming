@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * add - adds two integers and returns the result
- * @a: int to be added to b
- * @b: int to be added to a
- * Return: sum of a and b
+ * _abs - computes the absolute value of an integer
+ * @n: the int to check
+ * Return: the absolute value of int
  */
 
-int add(int a, int b)
+int _abs(int n)
 {
-	int c;
-
-	c = a + b;
-
-	return (c);
+	if (n >= 0)
+	{
+		return (n);
+	}
+	return (-n);
 }
