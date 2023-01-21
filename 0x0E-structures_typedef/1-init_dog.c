@@ -6,14 +6,13 @@
  * @name: First member
  * @age: Second member
  * @owner: Third member
- * @d: struct dog
- *
- * Return:0
+ * @d: struct dog pointer
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
-
 {
-	struct dog = {name, age, owner};
-
-	return (0);
+	if (d == NULL)
+		d = malloc(sizeof(struct dog));
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }
